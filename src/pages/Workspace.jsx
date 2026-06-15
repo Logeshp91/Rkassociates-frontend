@@ -7,6 +7,7 @@ const Workspace = () => {
   const [text, setText] = useState("");
   const [listening, setListening] = useState(false);
   const [micStatus, setMicStatus] = useState("checking");
+  const [isFullScreen, setIsFullScreen] = useState(false);
 
   const recognitionRef = useRef(null);
   const editorRef = useRef(null);
@@ -538,8 +539,12 @@ const stopListening = () => {
     setText(next);
   };
 
+  const toggleFullScreen = () => {
+    setIsFullScreen((current) => !current);
+  };
+
   return (
-    <div className="container">
+    <div className={`container ${isFullScreen ? "is-fullscreen" : ""}`}>
       <h1>
         Voice to Text Editor
       </h1>
@@ -591,6 +596,14 @@ const stopListening = () => {
           onClick={redo}
         >
           ↪️ Redo
+        </button>
+
+        <button
+          className="fullscreen"
+          onClick={toggleFullScreen}
+          type="button"
+        >
+          {isFullScreen ? "✕ Exit Full Screen" : "⛶ View Full Screen"}
         </button>
       </div>
 

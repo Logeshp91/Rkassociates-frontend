@@ -19,12 +19,9 @@ export default function App() {
         <Route element={<AppLayout />}>
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/workspace" element={<Workspace />} />
-        </Route>
-      </Route>
-
-      <Route element={<ProtectedRoute requireAdmin />}>
-        <Route element={<AppLayout />}>
-          <Route path="/users" element={<UserManagement />} />
+          <Route element={<ProtectedRoute requireAdmin />}>
+            <Route path="/users" element={<UserManagement />} />
+          </Route>
         </Route>
       </Route>
 
