@@ -23,7 +23,6 @@ export default function AppLayout() {
           <NavLink to="/workspace">Workspace</NavLink>
           {user.role === 'admin' && <NavLink to="/users">Users</NavLink>}
         </nav>
-
         <button className="secondary full" type="button" onClick={handleLogout}>
           Logout
         </button>
