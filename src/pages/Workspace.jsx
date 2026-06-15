@@ -544,7 +544,7 @@ const stopListening = () => {
   };
 
   return (
-    <div className={`container ${isFullScreen ? "is-fullscreen" : ""}`}>
+    <div className={`workspace-screen ${isFullScreen ? "is-fullscreen" : ""}`}>
       <h1>
         Voice to Text Editor
       </h1>

@@ -1,4 +1,4 @@
-.container {
+.workspace-screen {
   color: #182026;
   display: flex;
   flex-direction: column;
@@ -7,14 +7,14 @@
   width: 100%;
 }
 
-.container h1 {
+.workspace-screen h1 {
   color: #182026;
   font-size: clamp(2rem, 4vw, 3.5rem);
   line-height: 1;
   margin: 0;
 }
 
-.toolbar-buttons {
+.workspace-screen .toolbar-buttons {
   align-items: center;
   background: #ffffff;
   border: 1px solid #dce5e1;
@@ -27,7 +27,7 @@
   padding: 12px;
 }
 
-.toolbar-buttons button {
+.workspace-screen .toolbar-buttons button {
   border: 0;
   border-radius: 8px;
   box-shadow: none;
@@ -44,53 +44,53 @@
   white-space: nowrap;
 }
 
-.toolbar-buttons button:hover:not(:disabled) {
+.workspace-screen .toolbar-buttons button:hover:not(:disabled) {
   transform: translateY(-1px);
 }
 
-.toolbar-buttons button:disabled {
+.workspace-screen .toolbar-buttons button:disabled {
   cursor: not-allowed;
   opacity: 0.55;
 }
 
-.toolbar-buttons .start,
-.toolbar-buttons .check,
-.toolbar-buttons .fullscreen {
+.workspace-screen .toolbar-buttons .start,
+.workspace-screen .toolbar-buttons .check,
+.workspace-screen .toolbar-buttons .fullscreen {
   background: #176b58;
   color: #ffffff;
 }
 
-.toolbar-buttons .start:hover:not(:disabled),
-.toolbar-buttons .check:hover:not(:disabled),
-.toolbar-buttons .fullscreen:hover:not(:disabled) {
+.workspace-screen .toolbar-buttons .start:hover:not(:disabled),
+.workspace-screen .toolbar-buttons .check:hover:not(:disabled),
+.workspace-screen .toolbar-buttons .fullscreen:hover:not(:disabled) {
   background: #145a4a;
 }
 
-.toolbar-buttons .stop,
-.toolbar-buttons .clear {
+.workspace-screen .toolbar-buttons .stop,
+.workspace-screen .toolbar-buttons .clear {
   background: #fff3f1;
   border: 1px solid #f2c3bd;
   color: #b42318;
 }
 
-.toolbar-buttons .stop:hover:not(:disabled),
-.toolbar-buttons .clear:hover:not(:disabled) {
+.workspace-screen .toolbar-buttons .stop:hover:not(:disabled),
+.workspace-screen .toolbar-buttons .clear:hover:not(:disabled) {
   background: #ffe7e3;
   border-color: #e59990;
 }
 
-.toolbar-buttons .copy {
+.workspace-screen .toolbar-buttons .copy {
   background: #edf3f1;
   border: 1px solid #cfd8d3;
   color: #176b58;
 }
 
-.toolbar-buttons .copy:hover:not(:disabled) {
+.workspace-screen .toolbar-buttons .copy:hover:not(:disabled) {
   background: #e3efeb;
   border-color: #b7cbc3;
 }
 
-.card {
+.workspace-screen .card {
   background: #ffffff;
   border: 1px solid #dce5e1;
   border-radius: 8px;
@@ -105,7 +105,7 @@
   width: 100%;
 }
 
-.editor-wrapper {
+.workspace-screen .editor-wrapper {
   background: #ffffff;
   border: 1px solid #cfd8d3;
   border-radius: 8px;
@@ -117,33 +117,33 @@
   overflow: hidden;
 }
 
-.ck-editor {
+.workspace-screen .ck-editor {
   display: flex;
   flex: 1;
   flex-direction: column;
   min-height: 0;
 }
 
-.ck-editor__main,
-.ck-editor__editable_inline {
+.workspace-screen .ck-editor__main,
+.workspace-screen .ck-editor__editable_inline {
   flex: 1;
   min-height: 0;
   max-height: 100%;
   overflow-y: auto;
 }
 
-.ck-editor__editable_inline {
+.workspace-screen .ck-editor__editable_inline {
   font-size: 1.05rem;
   line-height: 1.75;
   padding: 20px !important;
 }
 
-.ck-focused {
+.workspace-screen .ck-focused {
   border-color: #176b58 !important;
   box-shadow: 0 0 0 3px rgba(23, 107, 88, 0.16) !important;
 }
 
-.status {
+.workspace-screen .status {
   background: #edf3f1;
   border: 1px solid #dce5e1;
   border-radius: 8px;
@@ -152,15 +152,15 @@
   text-align: center;
 }
 
-.status p {
+.workspace-screen .status p {
   margin: 0;
 }
 
-.ck-content {
+.workspace-screen .ck-content {
   overflow-x: auto;
 }
 
-.container.is-fullscreen {
+.workspace-screen.is-fullscreen {
   background:
     radial-gradient(circle at top right, rgba(57, 167, 142, 0.12), transparent 32rem),
     #f5f7f6;
@@ -173,32 +173,32 @@
   z-index: 1000;
 }
 
-.container.is-fullscreen h1 {
+.workspace-screen.is-fullscreen h1 {
   font-size: clamp(1.5rem, 3vw, 2.4rem);
 }
 
-.container.is-fullscreen .card {
+.workspace-screen.is-fullscreen .card {
   min-height: 0;
 }
 
-.container.is-fullscreen .status {
+.workspace-screen.is-fullscreen .status {
   display: none;
 }
 
 @media (max-width: 640px) {
-  .container {
+  .workspace-screen {
     min-height: auto;
   }
 
-  .toolbar-buttons {
+  .workspace-screen .toolbar-buttons {
     align-items: stretch;
   }
 
-  .toolbar-buttons button {
+  .workspace-screen .toolbar-buttons button {
     flex: 1 1 150px;
   }
 
-  .card {
+  .workspace-screen .card {
     min-height: 360px;
   }
 }
