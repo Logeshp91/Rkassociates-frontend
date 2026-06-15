@@ -546,7 +546,7 @@ const stopListening = () => {
   return (
     <div className={`workspace-screen ${isFullScreen ? "is-fullscreen" : ""}`}>
       <h1>
-        Voice to Text Editor
+RK Associates - Voice Transcription
       </h1>
 
       <div className="toolbar-buttons">

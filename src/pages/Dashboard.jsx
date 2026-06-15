@@ -30,7 +30,7 @@ export default function Dashboard() {
 
       {user.role === 'admin' && (
         <div className="action-strip">
-          <p>Admin controls are available for this account.</p>
+          <p></p>
           <Link className="button-link" to="/users">
             Manage Users
           </Link>

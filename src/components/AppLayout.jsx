@@ -13,10 +13,10 @@ export default function AppLayout() {
   return (
     <div className="app-shell">
       <aside className="sidebar">
-        <div>
-          <p className="brand">User Admin</p>
-          <p className="muted small">Signed in as {user.username}</p>
-        </div>
+<div>
+  <p className="brand">{user.username}</p>
+  <p className="muted small">Welcome to RK Associates</p>
+</div>
 
         <nav className="nav">
           <NavLink to="/dashboard">Dashboard</NavLink>

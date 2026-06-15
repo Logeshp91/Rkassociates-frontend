@@ -40,8 +40,8 @@ export default function Login() {
       <section className="login-panel">
         <div className="login-copy">
           <p className="eyebrow">Secure Access</p>
-          <h1>Sign in to manage users</h1>
-          <p className="muted">Use your admin or user account to continue to the dashboard.</p>
+          <h1>RK Associates Management Portal</h1>
+          <p className="muted">Welcome back. Sign in to access your dashboard.</p>
         </div>
 
         <form className="form-card" onSubmit={handleSubmit}>
