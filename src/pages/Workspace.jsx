@@ -16,6 +16,7 @@ const Workspace = () => {
 
   const historyRef = useRef([]);
   const redoRef = useRef([]);
+  const ignoreHistoryRef = useRef(false);
 
   // live preview
   const liveRangeRef = useRef(null);
@@ -459,10 +460,14 @@ const stopListening = () => {
     );
 
     redoRef.current = [];
+    ignoreHistoryRef.current = true;
 
     editor.setData("");
-
     setText("");
+
+    setTimeout(() => {
+      ignoreHistoryRef.current = false;
+    }, 0);
   };
 
   // -----------------------------
@@ -508,10 +513,14 @@ const stopListening = () => {
     redoRef.current.push(
       editor.getData()
     );
+    ignoreHistoryRef.current = true;
 
     editor.setData(last);
-
     setText(last);
+
+    setTimeout(() => {
+      ignoreHistoryRef.current = false;
+    }, 0);
   };
 
   // -----------------------------
@@ -533,10 +542,14 @@ const stopListening = () => {
     historyRef.current.push(
       editor.getData()
     );
+    ignoreHistoryRef.current = true;
 
     editor.setData(next);
-
     setText(next);
+
+    setTimeout(() => {
+      ignoreHistoryRef.current = false;
+    }, 0);
   };
 
   const toggleFullScreen = () => {
@@ -626,6 +639,14 @@ RK Associates - Voice Transcription
             ) => {
               const data =
                 editor.getData();
+
+              if (
+                !ignoreHistoryRef.current &&
+                data !== text
+              ) {
+                historyRef.current.push(text);
+                redoRef.current = [];
+              }
 
               setText(data);
             }}

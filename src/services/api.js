@@ -1,7 +1,23 @@
 import axios from 'axios';
 
+const viteEnv = typeof import.meta !== 'undefined' && import.meta.env ? import.meta.env : {};
+
+function getDefaultApiBaseUrl() {
+  if (typeof window === 'undefined') {
+    return 'https://rkassociates.onrender.com/api';
+  }
+
+  const { hostname } = window.location;
+
+  if (hostname === 'localhost' || hostname === '127.0.0.1') {
+    return 'http://localhost:5000/api';
+  }
+
+  return 'https://rkassociates.onrender.com/api';
+}
+
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || 'https://rkassociates.onrender.com/api',
+  baseURL: viteEnv.VITE_API_URL || getDefaultApiBaseUrl(),
   headers: {
     'Content-Type': 'application/json'
   }

@@ -69,7 +69,7 @@ export default function ResetPassword() {
         <div className="login-copy">
           <p className="eyebrow">Account Recovery</p>
           <h1>Reset your password</h1>
-          <p className="muted">Enter the OTP from your admin and choose a new password.</p>
+          <p className="muted">Enter the OTP from the admin inbox and choose a new password.</p>
           <Link className="auth-back-link" to="/forgot-password">
             Back
           </Link>

@@ -39,7 +39,7 @@ export default function ForgotPassword() {
         <div className="login-copy">
           <p className="eyebrow">Account Recovery</p>
           <h1>Reset your password</h1>
-          <p className="muted">Enter your username to send a 6-digit OTP to the admin email.</p>
+          <p className="muted">Enter your username to send a 6-digit OTP to the configured admin inbox.</p>
           <Link className="auth-back-link" to="/login">
             Back to sign in
           </Link>
