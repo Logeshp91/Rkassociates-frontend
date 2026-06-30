@@ -8,16 +8,22 @@ function getDefaultApiBaseUrl() {
   }
 
   const { hostname } = window.location;
+  const configuredApiUrl = (viteEnv.VITE_API_URL || '').trim();
+  const isLocalConfiguredUrl = /^(http:\/\/localhost|http:\/\/127\.0\.0\.1)/i.test(configuredApiUrl);
 
   if (hostname === 'localhost' || hostname === '127.0.0.1') {
-    return 'http://localhost:5000/api';
+    return configuredApiUrl || 'http://localhost:5000/api';
+  }
+
+  if (configuredApiUrl && !isLocalConfiguredUrl) {
+    return configuredApiUrl;
   }
 
   return 'https://rkassociates.onrender.com/api';
 }
 
 const api = axios.create({
-  baseURL: viteEnv.VITE_API_URL || getDefaultApiBaseUrl(),
+  baseURL: getDefaultApiBaseUrl(),
   headers: {
     'Content-Type': 'application/json'
   }
